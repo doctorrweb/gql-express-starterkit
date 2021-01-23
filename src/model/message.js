@@ -8,6 +8,10 @@ const messageSchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         ref: 'User'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 },{
     timestamps: true

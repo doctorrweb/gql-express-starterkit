@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-express'
 
-const typeDefs = gql `
+export default gql `
 
     type Token {
         token: String!
@@ -13,22 +13,21 @@ const typeDefs = gql `
         role: String
         messages: [Message!]
     }
-
+    
     extend type Query {
         users: [User!]
         user(id: ID!): User
         me: User
     }
-
+    
     extend type Mutation {
         signUp(username: String!, email: String!, password: String!): User!
         signIn(username: String!, password: String!): Token!
         updateUser(username: String!): User!
         deleteUser(id: ID!): Boolean!
     }
+    
 `
     // # extend type Subscription {}
 
 // module.exports = typeDefs
-
-export default typeDefs

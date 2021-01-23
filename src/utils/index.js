@@ -31,7 +31,7 @@ export const isAuthenticated = (parent, args, {me}) => {
 
 export const isAdmin = combineResolvers (
     // Remove the "This" if it's doesn't work
-    this.isAuthenticated,
+    isAuthenticated,
     (parent, args, {me: {role}}) => {
         return role === 'admin' ? skip : new ForbiddenError('User is not authorized to acces this resource')
     }

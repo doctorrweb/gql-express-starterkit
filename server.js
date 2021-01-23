@@ -5,7 +5,7 @@ import { connectMongo, models } from './src/model'
 require('dotenv').config()
 
 import typeDefs from './src/schema'
-import resolvers from './src/resolver'
+import resolvers from './src/resolvers'
 import { getMe } from './src/utils'
 
 
